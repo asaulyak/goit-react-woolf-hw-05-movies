@@ -1,0 +1,9 @@
+.actors {
+  display: flex;
+  gap: 28px;
+  flex-direction: column;
+}
+
+.actor {
+  max-width: 92px;
+}
