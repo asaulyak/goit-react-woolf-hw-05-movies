@@ -22,7 +22,7 @@ const Cast = () => {
 
   return (
     <div>
-      {cast?.length ? (
+      {cast && (
         <ul className={css.actors}>
           {cast.map(item => (
             <li key={item.id}>
@@ -30,8 +30,6 @@ const Cast = () => {
             </li>
           ))}
         </ul>
-      ) : (
-        <div>No cast available for this movie</div>
       )}
     </div>
   );
