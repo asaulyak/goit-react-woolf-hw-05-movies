@@ -1,11 +1,4 @@
-import { lazy, useEffect } from 'react';
-import {
-  getMovieCredits,
-  getMovieDetails,
-  getMovieReviews,
-  getTrending,
-  searchMovies,
-} from '../api/api';
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { Home } from '../pages/Home/Home';
 import { SharedLayout } from './SharedLayout/SharedLayout';
@@ -16,19 +9,13 @@ const Cast = lazy(() => import('../pages/Cast/Cast'));
 const Reviews = lazy(() => import('../pages/Reviews/Reviews'));
 
 export const App = () => {
-  useEffect(() => {
-    getTrending();
-    searchMovies('clockwork orange');
-    getMovieDetails(185);
-    getMovieCredits(185);
-    getMovieReviews(185);
-  }, []);
-
   return (
-    <div  style={{
-      height: '100vh',
-      color: '#010101'
-    }}>
+    <div
+      style={{
+        height: '100vh',
+        color: '#010101',
+      }}
+    >
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<Home />} />
